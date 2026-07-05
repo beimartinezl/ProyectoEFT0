@@ -11,26 +11,38 @@ def menu_principal():"""
 """
 # Validaciones
 
-def validar_codigo():
-    pass
+def validar_codigo(codigo, productos):
+    return codigo.lower() not in productos and codigo.strip() != ""
 
-def validar_nombre():
-    pass
+def validar_nombre(nombre, productos):
+    return nombre.strip() != ""
 
-def validar_categoria():
-    pass
+def validar_categoria(categoria, productos):
+    return categoria.strip() != ""
 
-def validar_precio():
-    pass
+def validar_precio(precio):
+    try:
+        return int(precio) > 0
+    except ValueError:
+        return False
 
-def validar_disponible():
-    pass
+def validar_disponible(opcion):
+    if opcion.lower() == "s":
+        return True
+    elif opcion.lower() == "n":
+        return False
 
-def validar_stock():
-    pass
+def validar_stock(stock):
+    try:
+        return int(stock) >= 0
+    except ValueError:
+        return False
 
-def validar_vendidos():
-    pass
+def validar_vendidos(vendidos):
+    try:
+        return int(vendidos) >= 0
+    except ValueError:
+        return False
 
 # Funciones
 
